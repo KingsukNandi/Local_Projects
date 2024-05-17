@@ -1,0 +1,275 @@
+* {
+  /* width: 100vw; */
+  padding: 0;
+  margin: 0;
+  /* <uniquifier>: Use a unique and descriptive class name
+    <weight>: Use a value from 100 to 900 */
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  /* color: white; */
+}
+body {
+  overflow-x: hidden;
+  color: white;
+  background-color: rgb(36, 36, 36);
+}
+.input {
+  background: rgb(19 19 19 / 64%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.333);
+  border-radius: 4px;
+}
+main {
+  margin-bottom: 7px;
+}
+article {
+  margin-bottom: 7px;
+}
+.main1 {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.2) 60%,
+      rgba(0, 0, 0, 0.9) 100%
+    ),
+    url("https://assets.nflxext.com/ffe/siteui/vlv3/ff5587c5-1052-47cf-974b-a97e3b4f0656/065df910-dec3-46ae-afa8-7ad2b52dce40/IN-en-20240506-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.logo img {
+  width: 130px;
+  color: rgb(229, 9, 20);
+}
+nav {
+  padding-top: 2vh;
+  justify-content: space-between;
+  align-items: center;
+  width: 77vw;
+  height: 10vh;
+  margin: auto;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-buttons {
+  width: 188px;
+  flex-direction: row;
+  justify-content: end;
+}
+.nav-right {
+  padding: 5px 15px;
+  font-size: 80%;
+}
+.language {
+  margin-right: 20px;
+}
+.button {
+  background-color: red;
+  color: white;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: rgb(193, 0, 0);
+}
+.hero {
+  height: 88vh;
+  width: 80vw;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.hero .text {
+  text-align: center;
+  text-shadow: 0px 0px 50px #000000, 0px 0px 100px #000000;
+}
+.hero .text div:nth-child(1) {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.hero .text div:nth-child(2) {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.hero .text div:nth-child(3) {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.email {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.email input {
+  width: 270px;
+  height: 10px;
+  padding: 18px;
+  font-size: 16px;
+  font-weight: 400;
+  /* background: rgb(87 147 238 / 20%); */
+}
+.email input::placeholder {
+  color: rgb(215, 215, 215);
+}
+.get-started {
+  font-size: large;
+  height: 46px;
+  padding: 0px 15px;
+}
+.main2 {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero2 {
+  width: 80vw;
+  margin: auto;
+}
+.article {
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+}
+.pic {
+  position: relative;
+  width: 50%;
+  z-index: 1;
+  object-fit: contain;
+}
+.vid {
+  position: absolute;
+  object-fit: contain;
+  right: 14.6%;
+  width: 30%;
+  z-index: 0;
+  top: 21%;
+}
+.article div:nth-child(1) {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+.article div:nth-child(2) {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+section {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  align-items: center;
+}
+.faqs {
+  height: 90vh;
+  width: 80vw;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
+}
+.faq {
+  font-size: 48px;
+  font-weight: 900;
+  width: 80vw;
+  text-align: center;
+}
+.question {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 80vw;
+  height: 81px;
+  background-color: rgba(95, 95, 95, 0.421);
+  transition-duration: 0.4s;
+}
+.question:hover {
+  background-color: rgba(161, 161, 161, 0.421);
+}
+.question div {
+  font-size: 24px;
+  font-weight: 400;
+}
+.question div:nth-child(1) {
+  margin-left: 25px;
+}
+.question div:nth-child(2) {
+  font-size: 60px;
+  font-weight: 100;
+}
+.question div:nth-child(2) img {
+  margin: 13px 25px 13px 0px;
+}
+article {
+  width: 100vw;
+  height: 20vh;
+  background-color: black;
+}
+.register div:nth-child(1) {
+  width: 80vw;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  margin: auto;
+  margin-bottom: 20px;
+}
+footer {
+  width: 100vw;
+  height: 60vh;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+}
+.foot {
+  width: 80vw;
+  font-size: 16px;
+  font-weight: 400;
+  margin: auto;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.692);
+  gap: 25px;
+}
+.foot select {
+  width: fit-content;
+}
+.links-column {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.list {
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+.list a {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.692);
+}
+/* @media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+} */
