@@ -147,19 +147,47 @@ nav {
   flex-direction: column;
   justify-content: center;
 }
-.pic {
-  position: relative;
-  width: 50%;
+/* fro pic and vid as flex items */
+/* .pic {
   z-index: 1;
-  object-fit: contain;
+  width: 614px;
+  position: relative;
 }
 .vid {
-  position: absolute;
-  object-fit: contain;
-  right: 14.6%;
-  width: 30%;
   z-index: 0;
-  top: 21%;
+  width: 448px;
+  position: absolute;
+  top: 95px;
+  right: 239px;
+} */
+/* for pic and vid as grid items */
+.visuals {
+  width: 50%;
+  display: grid;
+  /* grid-template-areas: "a" auto; */
+  grid-template-areas: "a";
+  /* align-items: center; */
+  place-content: center;
+  place-items: center;
+}
+.pic {
+  grid-area: a;
+  z-index: 1;
+  width: 100%;
+}
+.vid {
+  grid-area: a;
+  position: relative;
+}
+.TV {
+  top: -11px;
+  left: 4px;
+  width: 75%;
+}
+.device {
+  top: -39px;
+  left: -2px;
+  width: 65%;
 }
 .article div:nth-child(1) {
   font-size: 48px;
@@ -259,7 +287,10 @@ footer {
   gap: 20px;
   list-style: none;
 }
-.list a {
+.bottom-language {
+  justify-content: start;
+}
+.foot a {
   text-decoration: underline;
   color: rgba(255, 255, 255, 0.692);
 }
