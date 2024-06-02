@@ -1,0 +1,47 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Work Sans", sans-serif;
+  border: 1px solid white;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+.dashboard {
+  display: flex;
+  height: 85vh;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+.nav {
+  height: 20%;
+}
+.library {
+  height: 80%;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+.main-header {
+  height: 20%;
+}
+.main-content {
+}
+.main-footer {
+}
+.right {
+  width: 20vw;
+}
+.controls {
+  width: 100vw;
+  height: 15vh;
+}
