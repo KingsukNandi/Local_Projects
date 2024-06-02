@@ -15,17 +15,100 @@
   <body>
     <div class="dashboard">
       <aside class="left">
-        <nav class="nav">nav</nav>
-        <article class="library">library</article>
+        <nav class="nav container">
+          <!-- nav -->
+
+          <div>
+            <a href="#">
+              <div class="nav-link flex">
+                <img src="assets/home.svg" alt="" />Home
+              </div></a
+            >
+          </div>
+          <div>
+            <a href="#">
+              <div class="nav-link flex">
+                <img src="assets/search.svg" alt="" />Search
+              </div></a
+            >
+          </div>
+        </nav>
+        <article class="library container">
+          <!-- library -->
+          <!-- stylise this part -->
+          <img src="assets/libraryAlt.svg" alt="library" />
+          Library
+          <img src="assets/rescan.svg" alt="rescan" />
+        </article>
       </aside>
       <main class="main">
         <header class="main-header">main-header</header>
         <article class="main-content">main-content</article>
         <footer class="main-footer">main-footer</footer>
       </main>
-      <aside class="right">right</aside>
+      <aside class="right container">right</aside>
     </div>
-    <section class="controls">controls</section>
+    <section class="controls flex">
+      <!-- controls -->
+      <div class="thumbnail flex">
+        <div class="imgContainer">
+          <!-- insert song art using js -->
+          <img
+            class="songArt"
+            src="https://picsum.photos/200/300"
+            alt="song thumbnail"
+          />
+        </div>
+        <div class="names flex">
+          <span class="songName"> insert with js </span>
+          <span class="artistName"> insert with js </span>
+        </div>
+      </div>
+      <div class="songControls flex">
+        <div class="controlButtons flex">
+          <div class="flex">
+            <img
+              class="primaryControls"
+              src="assets/skipPrevious.svg"
+              alt="skip to previous"
+            />
+            <img
+              class="primaryControls"
+              src="assets/fastRewind.svg"
+              alt="fast rewind"
+            />
+            <img class="superControl" src="assets/playCircle.svg" alt="play" />
+            <img
+              class="primaryControls"
+              src="assets/fastForward.svg"
+              alt="fast forward"
+            />
+            <img
+              class="primaryControls"
+              src="assets/skipNext.svg"
+              alt="skip to next"
+            />
+          </div>
+        </div>
+        <div class="seekBar"></div>
+      </div>
+      <div class="otherControls flex">
+        <img class="secondaryButtons" src="assets/repeat.svg" alt="repeat" />
+        <img class="secondaryButtons" src="assets/queue.svg" alt="queue" />
+        <img class="secondaryButtons" src="assets/volume.svg" alt="volume" />
+        <input
+          class="secondaryButtons"
+          type="range"
+          name="volume"
+          id="volume"
+        />
+        <img
+          class="secondaryButtons"
+          src="assets/fullscreen.svg"
+          alt="fullscreen"
+        />
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
