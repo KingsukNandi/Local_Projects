@@ -33,12 +33,17 @@
             >
           </div>
         </nav>
-        <article class="library container">
+        <article class="library container flex">
           <!-- library -->
           <!-- stylise this part -->
-          <img src="assets/libraryAlt.svg" alt="library" />
-          Library
-          <img src="assets/rescan.svg" alt="rescan" />
+          <div class="libraryHeader flex">
+            <div class="libraryHeading flex">
+              <img src="assets/libraryAlt.svg" alt="library" /> Library
+            </div>
+            <div class="libraryRescan">
+              <img src="assets/rescan.svg" alt="rescan" />
+            </div>
+          </div>
         </article>
       </aside>
       <main class="main">
@@ -97,7 +102,7 @@
         <img class="secondaryButtons" src="assets/queue.svg" alt="queue" />
         <img class="secondaryButtons" src="assets/volume.svg" alt="volume" />
         <input
-          class="secondaryButtons"
+          class="secondaryButtons volumeSlider"
           type="range"
           name="volume"
           id="volume"
