@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.js"
+      integrity="sha512-fCU+rmH3nS/RJaTSl/ylo/PxwWIZwJts3rfxRylSPqGYMJGPLXvPJGOTF+ECb0K5m9rSXbkCNg2PR7WKGWRTVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,6 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
     <div class="dashboard">
@@ -35,14 +42,16 @@
         </nav>
         <article class="library container flex">
           <!-- library -->
-          <!-- stylise this part -->
           <div class="libraryHeader flex">
             <div class="libraryHeading flex">
-              <img src="assets/libraryAlt.svg" alt="library" /> Library
+              <img src="assets/libraryAlt.svg" alt="library" />Your Library
             </div>
             <div class="libraryRescan">
               <img src="assets/rescan.svg" alt="rescan" />
             </div>
+          </div>
+          <div class="libraryList">
+            <ol></ol>
           </div>
         </article>
       </aside>

@@ -61,6 +61,7 @@ nav div a div img {
 .library {
   height: 80%;
   padding: 20px;
+  flex-direction: column;
 }
 .libraryHeader {
   height: 32px;
@@ -76,6 +77,31 @@ nav div a div img {
 }
 .libraryHeading img {
   width: var(--iconWidth);
+}
+.libraryList {
+  overflow: auto;
+}
+.library ol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: auto;
+  list-style-type: none;
+}
+.library ol li {
+  border: 2px solid gray;
+  border-radius: 8px;
+  padding: 5px;
+  height: 55px;
+}
+.library ol li .title {
+  font-size: var(--avgText);
+  font-weight: 500;
+}
+.library ol li .artist {
+  font-size: var(--smallText);
+  font-weight: 500;
+  color: rgb(118, 118, 118);
 }
 .main {
   display: flex;
