@@ -47,5 +47,23 @@ async function generateSongList() {
     }
   }
   console.log(songs);
+  return songsHTML;
 }
-generateSongList();
+async function setEvent(songsHTML) {
+  for (let i = 0; i < songs.length; i++) {
+    const element = songs[i];
+    document
+      .getElementsByClassName("libraryList")[0]
+      .getElementsByTagName("li")
+      [i].addEventListener("dblclick", function () {
+        currSong = new Audio(songs[i].url);
+        currSong.play();
+      });
+  }
+  return songsHTML;
+}
+async function main() {
+  let songsHTML = await generateSongList();
+  songsHTML = await setEvent();
+}
+main();
