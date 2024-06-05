@@ -46,12 +46,12 @@
             <div class="libraryHeading flex">
               <img src="assets/libraryAlt.svg" alt="library" />Your Library
             </div>
-            <div class="libraryRescan">
+            <div class="libraryRescan" id="libraryRescan">
               <img src="assets/rescan.svg" alt="rescan" />
             </div>
           </div>
           <div class="libraryList">
-            <ol></ol>
+            <ol id="libraryListOL"></ol>
           </div>
         </article>
       </aside>
@@ -67,15 +67,15 @@
       <div class="thumbnail flex">
         <div class="imgContainer">
           <!-- insert song art using js -->
-          <img
+          <!-- <img
             class="songArt"
             src="https://picsum.photos/200/300"
             alt="song thumbnail"
-          />
+          /> -->
         </div>
         <div class="names flex">
-          <span class="songName"> insert with js </span>
-          <span class="artistName"> insert with js </span>
+          <span class="songName" id="songName"></span>
+          <span class="artistName" id="artistName"></span>
         </div>
       </div>
       <div class="songControls flex">
@@ -112,9 +112,24 @@
         <div class="seekBar"></div>
       </div>
       <div class="otherControls flex">
-        <img class="secondaryButtons" src="assets/repeat.svg" alt="repeat" />
-        <img class="secondaryButtons" src="assets/queue.svg" alt="queue" />
-        <img class="secondaryButtons" src="assets/volume.svg" alt="volume" />
+        <img
+          class="secondaryButtons"
+          id="repeat"
+          src="assets/repeatOff.svg"
+          alt="repeat"
+        />
+        <img
+          class="secondaryButtons"
+          id="queue"
+          src="assets/queue.svg"
+          alt="queue"
+        />
+        <img
+          class="secondaryButtons"
+          id="(un)mute"
+          src="assets/volume.svg"
+          alt="volume"
+        />
         <input
           class="secondaryButtons volumeSlider"
           type="range"
@@ -123,6 +138,7 @@
         />
         <img
           class="secondaryButtons"
+          id="fullscreen"
           src="assets/fullscreen.svg"
           alt="fullscreen"
         />

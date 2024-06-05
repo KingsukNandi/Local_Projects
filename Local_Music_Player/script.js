@@ -25,13 +25,18 @@ async function generateSongList() {
       };
 
       let tag = await displayMetadata(newSong);
-      const data = tag.tags.picture.data;
-      const format = tag.tags.picture.format;
-      let base64string = "";
-      for (let i = 0; i < data.length; i++) {
-        base64string += String.fromCharCode(data[i]);
-      }
-      let url = console.log(tag);
+
+      newSong.tag = tag;
+
+      // const data = tag.tags.picture.data;
+      // const format = tag.tags.picture.format;
+      // let base64string = "";
+
+      // for (let i = 0; i < data.length; i++) {
+      //   base64string += String.fromCharCode(data[i]);
+      // }
+
+      // console.log(tag);
 
       songs.push(newSong);
 
@@ -43,9 +48,11 @@ async function generateSongList() {
         songPlaceholder.innerHTML +
         `<li class="flex">
           <div>
-            <!-- <img src=url(data:${format};base64,${window.btoa(
-          base64string
-        )})> --> 
+            ${
+              /* <img src=url(data:${format};base64,${window.btoa(
+              base64string
+            )})> */ ``
+            }
           </div>
           <div>
             <div class="title">
@@ -61,20 +68,28 @@ async function generateSongList() {
   console.log(songs);
   return songsHTML;
 }
-async function setEvent(songsHTML) {
+
+async function setEvents(songsHTML) {
   for (let i = 0; i < songs.length; i++) {
     const element = songs[i];
+
     document
       .getElementsByClassName("libraryList")[0]
       .getElementsByTagName("li")
       [i].addEventListener("dblclick", function () {
         currSong.src = songs[i].url;
+
         currSong.play();
         superControl.src = "assets/pauseCircle.svg";
-        console.log(i);
+        // console.log(i);
+
+        songName.textContent = `${songs[i].tag.tags.title}`;
+        artistName.textContent = `${songs[i].tag.tags.artist}`;
       });
-    console.log(i);
+
+    // console.log(i);
   }
+
   superControl.addEventListener("click", function () {
     if (currSong.paused) {
       currSong.play();
@@ -84,13 +99,25 @@ async function setEvent(songsHTML) {
       superControl.src = "assets/playCircle.svg";
     }
   });
+
+  libraryRescan.addEventListener("click", async function () {
+    libraryListOL.innerText = "";
+    main();
+  });
+
+  repeat.addEventListener("click", function () {
+    if (currSong.loop) {
+      currSong.loop = false;
+      repeat.src = "assets/repeatOff.svg";
+    } else {
+      currSong.loop = true;
+      repeat.src = "assets/repeatOn.svg";
+    }
+  });
+
   return songsHTML;
 }
-async function main() {
-  let songsHTML = await generateSongList();
-  songsHTML = await setEvent(songsHTML);
-}
-main();
+
 function displayMetadata(newSong) {
   return new Promise((resolve, reject) => {
     jsmediatags.read(newSong.url, {
@@ -108,3 +135,10 @@ function displayMetadata(newSong) {
     });
   });
 }
+
+async function main() {
+  let songsHTML = await generateSongList();
+  songsHTML = await setEvents(songsHTML);
+}
+
+main();
