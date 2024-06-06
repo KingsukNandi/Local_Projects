@@ -128,9 +128,31 @@ async function setEvents(songsHTML) {
       (100 * currSong.currentTime) / currSong.duration + "%";
   });
 
-  // currSong.addEventListener("change", function () {
-  //   duration.innerText = currSong.duration;
-  // });
+  seekBar.addEventListener("mouseover", function () {
+    pointer.style.backgroundColor = `rgb(0, 104, 232)`;
+    progressBar.style.backgroundColor = `white`;
+  });
+
+  seekBar.addEventListener("mouseout", function () {
+    pointer.style.backgroundColor = `rgba(0, 104, 232, 0)`;
+    progressBar.style.backgroundColor = `rgb(163, 163, 163)`;
+  });
+
+  progressBarContainer.addEventListener("click", function (event) {
+    currSong.currentTime =
+      (currSong.duration * event.offsetX) / progressBarContainer.offsetWidth;
+  });
+
+  un_or_mute.addEventListener("click", function () {
+    if (currSong.muted) {
+      currSong.muted = false;
+      un_or_mute.src = "assets/volume.svg";
+    } else {
+      currSong.muted = true;
+      currSong.pause();
+      un_or_mute.src = "assets/noVolume.svg";
+    }
+  });
 
   return songsHTML;
 }

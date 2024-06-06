@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
+
   <body>
     <div class="dashboard">
       <aside class="left">
@@ -55,13 +56,16 @@
           </div>
         </article>
       </aside>
+
       <main class="main">
         <header class="main-header">main-header</header>
         <article class="main-content">main-content</article>
         <footer class="main-footer">main-footer</footer>
       </main>
+
       <aside class="right container">right</aside>
     </div>
+
     <section class="controls flex">
       <!-- controls -->
       <div class="thumbnail flex">
@@ -109,10 +113,13 @@
             />
           </div>
         </div>
-        <div class="seekBar flex">
+        <div class="seekBar flex" id="seekBar">
           <div class="currTime" id="currTime"></div>
-          <div class="progressBar" id="progressBar">
-            <div class="progress" id="progress"></div>
+          <div class="progressBarContainer flex" id="progressBarContainer">
+            <div class="progressBar flex" id="progressBar">
+              <div class="progress" id="progress"></div>
+              <div class="pointer" id="pointer"></div>
+            </div>
           </div>
           <div class="duration" id="duration"></div>
         </div>
@@ -132,7 +139,7 @@
         />
         <img
           class="secondaryButtons"
-          id="(un)mute"
+          id="un_or_mute"
           src="assets/volume.svg"
           alt="volume"
         />
@@ -150,6 +157,7 @@
         />
       </div>
     </section>
+
     <script src="script.js"></script>
   </body>
 </html>

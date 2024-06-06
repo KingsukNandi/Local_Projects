@@ -189,11 +189,18 @@ nav div a div img {
   width: 10%;
   text-align: center;
 }
-.progressBar {
-  background-color: white;
-  height: 3px;
+.progressBarContainer {
   width: 75%;
+  height: 100%;
+  align-items: center;
+  margin: auto;
+}
+.progressBar {
+  background-color: rgb(163, 163, 163);
+  height: 3px;
+  width: 100%;
   border-radius: 2px;
+  transition: background-color 0.3s ease-out;
 }
 .duration {
   width: 10%;
@@ -201,11 +208,25 @@ nav div a div img {
 }
 .progress {
   height: 100%;
-  width: 50%;
+  width: 0%;
   background-color: rgb(0, 179, 255);
   border-radius: 2px;
   /* transition: width linear; */
 }
+.pointer {
+  height: 10px;
+  width: 10px;
+  background-color: rgba(0, 104, 232, 0);
+  position: relative;
+  top: -4px;
+  left: -5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-out;
+}
+/* .progress::after:hover {
+  content: ;
+  background-color: rgb(0, 0, 0);
+} */
 .otherControls {
   width: 25%;
   justify-content: flex-end;
