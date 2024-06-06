@@ -182,6 +182,29 @@ nav div a div img {
 .seekBar {
   width: 100%;
   height: 50%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.currTime {
+  width: 10%;
+  text-align: center;
+}
+.progressBar {
+  background-color: white;
+  height: 3px;
+  width: 75%;
+  border-radius: 2px;
+}
+.duration {
+  width: 10%;
+  text-align: center;
+}
+.progress {
+  height: 100%;
+  width: 50%;
+  background-color: rgb(0, 179, 255);
+  border-radius: 2px;
+  /* transition: width linear; */
 }
 .otherControls {
   width: 25%;

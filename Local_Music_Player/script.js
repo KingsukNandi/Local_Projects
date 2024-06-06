@@ -115,7 +115,35 @@ async function setEvents(songsHTML) {
     }
   });
 
+  currSong.addEventListener("timeupdate", function () {
+    currTime.textContent = formatTime(currSong.currentTime);
+
+    if (currSong.duration === `NaN`) {
+      duration.textContent = ``;
+    } else {
+      duration.textContent = formatTime(currSong.duration);
+    }
+
+    progress.style.width =
+      (100 * currSong.currentTime) / currSong.duration + "%";
+  });
+
+  // currSong.addEventListener("change", function () {
+  //   duration.innerText = currSong.duration;
+  // });
+
   return songsHTML;
+}
+
+function formatTime(time) {
+  let minutes = Math.floor(time / 60);
+  let seconds = Math.floor(time % 60);
+
+  return `${minutes}:${padZero(seconds)}`;
+}
+
+function padZero(num) {
+  return (num < 10 ? "0" : "") + num;
 }
 
 function displayMetadata(newSong) {
