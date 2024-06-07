@@ -1,5 +1,6 @@
 let songs = [];
 var currSong = new Audio();
+currSong.muted = false;
 const jsmediatags = window.jsmediatags;
 
 async function generateSongList() {
@@ -65,7 +66,7 @@ async function generateSongList() {
         </li>`;
     }
   }
-  console.log(songs);
+  // console.log(songs);
   return songsHTML;
 }
 
@@ -79,9 +80,12 @@ async function setEvents(songsHTML) {
       [i].addEventListener("dblclick", function () {
         currSong.src = songs[i].url;
 
-        currSong.play();
-        superControl.src = "assets/pauseCircle.svg";
-        // console.log(i);
+        if (!currSong.muted) {
+          currSong.play();
+          superControl.src = "assets/pauseCircle.svg";
+        } else {
+          duration.textContent = ``;
+        }
 
         songName.textContent = `${songs[i].tag.tags.title}`;
         artistName.textContent = `${songs[i].tag.tags.artist}`;
@@ -146,11 +150,20 @@ async function setEvents(songsHTML) {
   un_or_mute.addEventListener("click", function () {
     if (currSong.muted) {
       currSong.muted = false;
+      currSong.play();
+      superControl.src = "assets/pauseCircle.svg";
       un_or_mute.src = "assets/volume.svg";
+      muted.style.top = "0px";
+      duration.textContent = ``;
     } else {
       currSong.muted = true;
       currSong.pause();
+      superControl.src = "assets/playCircle.svg";
       un_or_mute.src = "assets/noVolume.svg";
+      muted.style.top = "-105px";
+      setTimeout(() => {
+        muted.style.top = "0px";
+      }, 2500);
     }
   });
 

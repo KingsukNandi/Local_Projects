@@ -15,7 +15,7 @@
 body {
   background-color: black;
   color: white;
-  overflow: hidden;
+  overflow-y: auto;
 }
 .container {
   background-color: rgb(28, 28, 28);
@@ -134,6 +134,7 @@ nav div a div img {
 .thumbnail {
   align-items: center;
   width: 25%;
+  margin-left: 20px;
 }
 .imgContainer {
   height: 85%;
@@ -158,6 +159,13 @@ nav div a div img {
   font-size: var(--smallText);
   font-weight: 500;
   color: rgb(118, 118, 118);
+}
+.button {
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+.button:hover {
+  filter: brightness(1);
 }
 .songControls {
   width: 50%;
@@ -194,6 +202,7 @@ nav div a div img {
   height: 100%;
   align-items: center;
   margin: auto;
+  cursor: pointer;
 }
 .progressBar {
   background-color: rgb(163, 163, 163);
@@ -240,4 +249,24 @@ nav div a div img {
 }
 .volumeSlider {
   filter: brightness(1);
+}
+.errorMessages {
+  position: absolute;
+  bottom: -100px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  z-index: 10;
+}
+.message {
+  position: absolute;
+  background-color: rgb(38, 38, 38);
+  width: 55%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid rgb(128, 128, 128);
+  transition: top 0.7s ease-in-out;
 }

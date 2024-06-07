@@ -69,14 +69,6 @@
     <section class="controls flex">
       <!-- controls -->
       <div class="thumbnail flex">
-        <div class="imgContainer">
-          <!-- insert song art using js -->
-          <!-- <img
-            class="songArt"
-            src="https://picsum.photos/200/300"
-            alt="song thumbnail"
-          /> -->
-        </div>
         <div class="names flex">
           <span class="songName" id="songName"></span>
           <span class="artistName" id="artistName"></span>
@@ -86,12 +78,12 @@
         <div class="controlButtons flex">
           <div class="flex">
             <img
-              class="primaryControls"
+              class="primaryControls button"
               src="assets/skipPrevious.svg"
               alt="skip to previous"
             />
             <img
-              class="primaryControls"
+              class="primaryControls button"
               src="assets/fastRewind.svg"
               alt="fast rewind"
             />
@@ -102,12 +94,12 @@
               alt="play"
             />
             <img
-              class="primaryControls"
+              class="primaryControls button"
               src="assets/fastForward.svg"
               alt="fast forward"
             />
             <img
-              class="primaryControls"
+              class="primaryControls button"
               src="assets/skipNext.svg"
               alt="skip to next"
             />
@@ -126,19 +118,19 @@
       </div>
       <div class="otherControls flex">
         <img
-          class="secondaryButtons"
+          class="secondaryButtons button"
           id="repeat"
           src="assets/repeatOff.svg"
           alt="repeat"
         />
         <img
-          class="secondaryButtons"
+          class="secondaryButtons button"
           id="queue"
           src="assets/queue.svg"
           alt="queue"
         />
         <img
-          class="secondaryButtons"
+          class="secondaryButtons button"
           id="un_or_mute"
           src="assets/volume.svg"
           alt="volume"
@@ -150,13 +142,20 @@
           id="volume"
         />
         <img
-          class="secondaryButtons"
+          class="secondaryButtons button"
           id="fullscreen"
           src="assets/fullscreen.svg"
           alt="fullscreen"
         />
       </div>
     </section>
+
+    <article class="errorMessages">
+      <div class="muted message" id="muted">
+        Song Muted. Unmute volume to play
+      </div>
+      <div class="default message" id="default">Select song to play</div>
+    </article>
 
     <script src="script.js"></script>
   </body>
