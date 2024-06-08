@@ -57,9 +57,9 @@
         </article>
       </aside>
 
-      <main class="main">
+      <main class="main" id="main">
         <header class="main-header">main-header</header>
-        <article class="main-content">main-content</article>
+        <article class="main-content" id="main_content"></article>
         <footer class="main-footer">main-footer</footer>
       </main>
 
@@ -74,6 +74,7 @@
           <span class="artistName" id="artistName"></span>
         </div>
       </div>
+
       <div class="songControls flex">
         <div class="controlButtons flex">
           <div class="flex">
@@ -116,6 +117,7 @@
           <div class="duration" id="duration"></div>
         </div>
       </div>
+
       <div class="otherControls flex">
         <img
           class="secondaryButtons button"
@@ -138,6 +140,9 @@
         <input
           class="secondaryButtons volumeSlider"
           type="range"
+          min="0"
+          max="100"
+          value="100"
           name="volume"
           id="volume"
         />
@@ -150,7 +155,7 @@
       </div>
     </section>
 
-    <article class="errorMessages">
+    <article class="errorMessages grid">
       <div class="muted message" id="muted">
         Song Muted. Unmute volume to play
       </div>

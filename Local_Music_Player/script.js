@@ -1,12 +1,13 @@
 let songs = [];
+let directories = [];
+let songsHTML;
+let fetchURL = "http://127.0.0.1:5500/Projects/Local_Music_Player/songs/";
 var currSong = new Audio();
 currSong.muted = false;
 const jsmediatags = window.jsmediatags;
 
 async function generateSongList() {
-  let songsHTML = await fetch(
-    "http://127.0.0.1:5500/Projects/Local_Music_Player/songs/"
-  );
+  songsHTML = await fetch(`${fetchURL}`);
 
   let songsHTMLText = await songsHTML.text();
 
@@ -14,9 +15,19 @@ async function generateSongList() {
 
   div.innerHTML = songsHTMLText;
 
+  let directoriesLinks = div.querySelectorAll(`.icon-directory`);
+
+  for (let i = 1; i < directoriesLinks.length; i++) {
+    main_content.innerHTML =
+      main_content.innerHTML +
+      `<div id=${directoriesLinks[i].title}>${directoriesLinks[i].title}</div>`;
+    // console.log(directoriesLinks[i].title);
+    directories.push(directoriesLinks[i]);
+  }
+
   let songLinks = div.getElementsByTagName("a");
 
-  // songs = []; // this sets an empty list of songs everytime the songs folder is modified
+  songs = []; // this sets an empty list of songs everytime the songs folder is modified
 
   for (const song of songLinks) {
     if (song.href.endsWith(".mp3")) {
@@ -71,6 +82,17 @@ async function generateSongList() {
 }
 
 async function setEvents(songsHTML) {
+  for (let i = 0; i < directories.length; i++) {
+    main_content
+      .getElementsByTagName("div")
+      [i].addEventListener("dblclick", function () {
+        fetchURL = directories[i].href;
+        libraryListOL.innerText = ``;
+        main();
+        console.log("hi");
+      });
+  }
+
   for (let i = 0; i < songs.length; i++) {
     const element = songs[i];
 
@@ -147,7 +169,7 @@ async function setEvents(songsHTML) {
       (currSong.duration * event.offsetX) / progressBarContainer.offsetWidth;
   });
 
-  un_or_mute.addEventListener("click", function () {
+  un_or_mute.addEventListener("click", function mute_unmute() {
     if (currSong.muted) {
       currSong.muted = false;
       currSong.play();
@@ -166,6 +188,13 @@ async function setEvents(songsHTML) {
       }, 2500);
     }
   });
+
+  volume.oninput = function () {
+    currSong.volume = volume.value / 100;
+    if (currSong.volume == 0) {
+      mute_unmute();
+    }
+  };
 
   return songsHTML;
 }
@@ -200,6 +229,10 @@ function displayMetadata(newSong) {
 }
 
 async function main() {
+  songs = [];
+  directories = [];
+  main_content.innerText = ``;
+  libraryListOL.innerHTML = ``;
   let songsHTML = await generateSongList();
   songsHTML = await setEvents(songsHTML);
 }
