@@ -2,6 +2,7 @@ let songs = [];
 let directories = [];
 let songsHTML;
 let fetchURL = "http://127.0.0.1:5500/Projects/Local_Music_Player/songs/";
+let prevURL;
 var currSong = new Audio();
 currSong.muted = false;
 const jsmediatags = window.jsmediatags;
@@ -88,8 +89,12 @@ async function setEvents(songsHTML) {
       [i].addEventListener("dblclick", function () {
         fetchURL = directories[i].href;
         libraryListOL.innerText = ``;
+        let splitURL = directories[i].href.split("/");
+        prevURL = ``;
+        for (let j = 0; j < splitURL.length - 1; j++) {
+          prevURL += splitURL[j] + "/";
+        }
         main();
-        console.log("hi");
       });
   }
 
@@ -116,6 +121,13 @@ async function setEvents(songsHTML) {
     // console.log(i);
   }
 
+  prevPage.addEventListener("click", function previousPage() {
+    fetchURL = prevURL;
+    libraryListOL.innerText = ``;
+    main_content.innerHTML = ``;
+    main();
+  });
+  // console.log("hi");
   superControl.addEventListener("click", function () {
     if (currSong.paused) {
       currSong.play();
